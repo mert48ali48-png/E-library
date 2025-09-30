@@ -38,7 +38,6 @@
           transform:translateY(6px);opacity:0;transition:transform .4s ease, box-shadow .4s ease, opacity .6s ease}
     .book.revealed{opacity:1;transform:translateY(0)}
     .cover{width:100%;height:360px;object-fit:cover;display:block;background:#e8ebf6}
-    /* placeholder if no image file exists */
     .placeholder{display:grid;place-items:center;color:#94a0b8;font-weight:600}
     .book__body{padding:1rem 1rem 1.2rem}
     .book__body h2{margin:.5rem 0 .35rem;font-size:1.08rem}
@@ -52,10 +51,35 @@
     .section h2{margin:0 0 .6rem}
     .section p{color:var(--muted);max-width:720px;margin:.25rem auto}
 
+    /* ART GALLERY */
+    .gallery{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem; margin-top:1.5rem; justify-items:center;
+    }
+    .art-card{
+      width:260px; max-width:90vw;
+      background:#fff; border-radius:12px; overflow:hidden;
+      box-shadow:0 6px 18px rgba(0,0,0,.08);
+      transition:transform .25s ease, box-shadow .25s ease;
+      position:relative;
+    }
+    .art-card img{width:100%; height:auto; display:block; border-radius:8px}
+    .art-card h3{margin:.75rem 1rem .25rem; font-size:1.05rem}
+    .art-card p{margin:0 1rem 1rem; color:#555}
+    .art-card:hover{transform:translateY(-4px); box-shadow:0 12px 26px rgba(0,0,0,.14)}
+    .badge{
+      position:absolute; top:10px; left:10px;
+      background:linear-gradient(135deg,#1868ff,#8a5cff);
+      color:#fff; font-size:.75rem; padding:.25rem .5rem; border-radius:999px;
+    }
+    .badge.core{background:#888}
+
     /* FOOTER */
     .footer{max-width:900px;margin:2rem auto 3rem;padding:0 1rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
     #backToTop{border:0;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;
                padding:.5rem .7rem;font-weight:700;cursor:pointer;box-shadow:var(--shadow)}
+    @media(min-width:900px){.art-card{width:300px}}
     @media(max-width:600px){.nav ul{gap:1.2rem}}
   </style>
 </head>
@@ -65,6 +89,7 @@
   <nav class="nav">
     <ul>
       <li><a href="#books">Books</a></li>
+      <li><a href="#art">Art</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -81,11 +106,10 @@
 
   <!-- BOOKS -->
   <main id="books" class="books">
-
-    <!-- BOOK 1: Mükemmel Ada -->
+    <!-- BOOK 1 -->
     <article class="book" data-reveal>
-      <!-- use your real cover file at images/mukemmel-ada-cover.jpg -->
-      <img class="cover" src="images/mukemmel-ada-cover.jpg" alt="Mükemmel Ada: Perfectus Status cover" onerror="this.classList.add('placeholder'); this.src=''; this.alt='Cover coming soon'; this.innerHTML='';">
+      <img class="cover" src="images/mukemmel-ada-cover.jpg" alt="Mükemmel Ada: Perfectus Status cover"
+           onerror="this.classList.add('placeholder'); this.src=''; this.alt='Cover coming soon';">
       <div class="book__body">
         <h2>Mükemmel Ada: Perfectus Status</h2>
         <p>İdeal düzenin bedelini ve özgür iradenin sınırlarını sorgulayan felsefi bir roman.</p>
@@ -93,101 +117,130 @@
       </div>
     </article>
 
-    <!-- BOOK 2: Power Philosophy (Coming soon) -->
+    <!-- BOOK 2 -->
     <article class="book" data-reveal>
-      <!-- optional cover file name below; otherwise a soft placeholder appears -->
-      <img class="cover" src="images/power-philosophy-cover.jpg" alt="Power Philosophy cover" onerror="this.outerHTML='<div class=&quot;cover placeholder&quot;><span>Cover coming soon</span></div>'">
+      <img class="cover" src="images/power-philosophy-cover.jpg" alt="Power Philosophy cover"
+           onerror="this.outerHTML='<div class=&quot;cover placeholder&quot;><span>Cover coming soon</span></div>'">
       <div class="book__body">
         <h2>Power Philosophy</h2>
         <p><em>Coming soon…</em></p>
         <a class="button" href="#contact">Notify me</a>
       </div>
     </article>
-<section id="art" class="section">
-  <h2>Art Gallery</h2>
-  <li><a href="#art">Art</a></li>
-  <div class="gallery">
-    <!-- FOR-SALE CARD -->
-    <article class="art-card for-sale">
-      <img src="art/redara.jpg" alt="Redara — character design">
-      <h3>Redara</h3>
-      <p>Dark mystic caster. Swirling sigils, sharp features, fire palette.</p>
-      <a class="button" target="_blank" href="https://YOUR_GUMROAD_LINK">Buy character</a>
-      <span class="badge">For Sale</span>
-    </article>
-<article class="art-card for-sale">
-  <span class="badge">For Sale</span>
-  <img src="Hegros%20Concept.PNG" alt="Hegros concept art">
-  <h3>Hegros</h3>
-  <p>Elegant but ruthless. A refined design suited for dark fantasy or sci-fi worlds.</p>
-  <a class="button" target="_blank" href="https://mertali5.gumroad.com/l/jsnkld">Buy character</a>
-</article>
-    <!-- CORE (NOT FOR SALE) -->
-    
-    </article>
-<article class="art-card">
-  <span class="badge core">Core</span>
-  <img src="Bader%20vs%20Manchu.PNG" alt="Bader versus Manchu">
-  <h3>Bader vs Manchu</h3>
-  <p>Clash of wills; kinetic framing and hard shadows emphasize impact.</p>
-</article>
-    <article class="art-card">
-  <span class="badge core">Core</span>
-  <img src="Ire%20vs%20Mereo.PNG" alt="Ire versus Mereo">
-  <h3>Ire vs Mereo</h3>
-  <p>Close-quarters struggle; hot–cold lighting contrasts opposing drives.</p>
-</article>
-    <article class="art-card">
-  <span class="badge core">Core</span>
-  <img src="Ire,%20Emurena,%20Jusmin.PNG" alt="Ire, Emurena, Jusmin — endgame triad">
-  <h3>The Triad</h3>
-  <p>Three endgame figures; calm faces, heavy stakes in a stormed backdrop.</p>
-</article>
-    <article class="art-card">
-  <span class="badge core">Core</span>
-  <img src="Manbadereo%20Fusion%20Concept.PNG" alt="Manbadereo fusion concept">
-  <h3>Manbadereo Fusion</h3>
-  <p>Fusion anatomy study—layered musculature and luminous marks.</p>
-</article>
-    <article class="art-card">
-      <img src="art/ire-vs-foe.jpg" alt="Ire in battle">
-      <h3>Ire in Battle</h3>
-      <p>Early keyframe concept — energy clash, heavy lighting.</p>
-    </article>
-    <article class="art-card">
-  <span class="badge core">Core</span>
-  <img src="Manchu%20Sketch.PNG" alt="Manchu sketch">
-  <h3>Manchu (Sketch)</h3>
-  <p>Loose linework capturing posture and intent before polish.</p>
-</article>
-    <article class="art-card">
-  <span class="badge core">Core</span>
-  <img src="Manchu%20Wallpaper.PNG" alt="Manchu wallpaper artwork">
-  <h3>Manchu Wallpaper</h3>
-  <p>High-energy palette with radiating gradients for desktop/mobile.</p>
-</article>
-    <article class="art-card">
-  <span class="badge core">Core</span>
-  <img src="Manchu%E2%80%99s%20Optimum%20Mark.PNG" alt="Manchu’s optimum mark symbol">
-  <h3>Manchu’s Optimum Mark</h3>
-  <p>Sigil study—geometric star rune and hand placements.</p>
-</article>
-    <article class="art-card">
-  <span class="badge core">Core</span>
-  <img src="Mereo%20vs%20Ruomi.PNG" alt="Mereo versus Ruomi">
-  <h3>Mereo vs Ruomi</h3>
-  <p>Blade tension against distorted space; purple void motif.</p>
-</article>
-    <article class="art-card">
-  <span class="badge core">Core</span>
-  <img src="Ruomi%20vs%20Manbadereo.PNG" alt="Ruomi versus Manbadereo">
-  <h3>Ruomi vs Manbadereo</h3>
-  <p>Distant standoff across chasms—light versus toxic growths.</p>
-</article>
-    <!-- Add more <article> cards as you upload -->
-  </div>
-</section>
   </main>
+
+  <!-- ART (moved OUTSIDE of <main> and fixed tags) -->
+  <section id="art" class="section">
+    <h2>Art Gallery</h2>
+    <div class="gallery">
+
+      <!-- Hegros — FOR SALE -->
+      <article class="art-card for-sale">
+        <span class="badge">For Sale</span>
+        <img src="Hegros%20Concept.PNG" alt="Hegros concept art">
+        <h3>Hegros</h3>
+        <p>Elegant but ruthless. A refined design suited for dark fantasy or sci-fi worlds.</p>
+        <a class="button" target="_blank" href="https://mertali5.gumroad.com/l/jsnkld">Buy character</a>
+      </article>
+
+      <!-- Redara — CORE -->
+      <article class="art-card">
+        <span class="badge core">Core</span>
+        <img src="Redara.PNG" alt="Redara concept">
+        <h3>Redara</h3>
+        <p>Enigmatic caster with crimson seals; reserved for canon use.</p>
+      </article>
+
+      <!-- Bader vs Manchu — CORE -->
+      <article class="art-card">
+        <span class="badge core">Core</span>
+        <img src="Bader%20vs%20Manchu.PNG" alt="Bader versus Manchu">
+        <h3>Bader vs Manchu</h3>
+        <p>Clash of wills; kinetic framing and hard shadows emphasize impact.</p>
+      </article>
+
+      <!-- Ire vs Mereo — CORE -->
+      <article class="art-card">
+        <span class="badge core">Core</span>
+        <img src="Ire%20vs%20Mereo.PNG" alt="Ire versus Mereo">
+        <h3>Ire vs Mereo</h3>
+        <p>Close-quarters struggle; hot–cold lighting contrasts opposing drives.</p>
+      </article>
+
+      <!-- Triad — CORE -->
+      <article class="art-card">
+        <span class="badge core">Core</span>
+        <img src="Ire,%20Emurena,%20Jusmin.PNG" alt="Ire, Emurena, Jusmin — endgame triad">
+        <h3>The Triad</h3>
+        <p>Three endgame figures; calm faces, heavy stakes in a stormed backdrop.</p>
+      </article>
+
+      <!-- Manbadereo Fusion — CORE -->
+      <article class="art-card">
+        <span class="badge core">Core</span>
+        <img src="Manbadereo%20Fusion%20Concept.PNG" alt="Manbadereo fusion concept">
+        <h3>Manbadereo Fusion</h3>
+        <p>Fusion anatomy study—layered musculature and luminous marks.</p>
+      </article>
+
+      <!-- Ire in Battle — CORE (uses art folder path if you have it) -->
+      <article class="art-card">
+        <span class="badge core">Core</span>
+        <img src="art/ire-vs-foe.jpg" alt="Ire in battle">
+        <h3>Ire in Battle</h3>
+        <p>Early keyframe concept — energy clash, heavy lighting.</p>
+      </article>
+
+      <!-- Manchu (Sketch) — CORE -->
+      <article class="art-card">
+        <span class="badge core">Core</span>
+        <img src="Manchu%20Sketch.PNG" alt="Manchu sketch">
+        <h3>Manchu (Sketch)</h3>
+        <p>Loose linework capturing posture and intent before polish.</p>
+      </article>
+
+      <!-- Manchu Wallpaper — CORE -->
+      <article class="art-card">
+        <span class="badge core">Core</span>
+        <img src="Manchu%20Wallpaper.PNG" alt="Manchu wallpaper artwork">
+        <h3>Manchu Wallpaper</h3>
+        <p>High-energy palette with radiating gradients for desktop/mobile.</p>
+      </article>
+
+      <!-- Manchu’s Optimum Mark — CORE -->
+      <article class="art-card">
+        <span class="badge core">Core</span>
+        <img src="Manchu%E2%80%99s%20Optimum%20Mark.PNG" alt="Manchu’s optimum mark symbol">
+        <h3>Manchu’s Optimum Mark</h3>
+        <p>Sigil study—geometric star rune and hand placements.</p>
+      </article>
+
+      <!-- Mereo vs Ruomi — CORE -->
+      <article class="art-card">
+        <span class="badge core">Core</span>
+        <img src="Mereo%20vs%20Ruomi.PNG" alt="Mereo versus Ruomi">
+        <h3>Mereo vs Ruomi</h3>
+        <p>Blade tension against distorted space; purple void motif.</p>
+      </article>
+
+      <!-- Ruomi vs Manbadereo — CORE -->
+      <article class="art-card">
+        <span class="badge core">Core</span>
+        <img src="Ruomi%20vs%20Manbadereo.PNG" alt="Ruomi versus Manbadereo">
+        <h3>Ruomi vs Manbadereo</h3>
+        <p>Distant standoff across chasms—light versus toxic growths.</p>
+      </article>
+
+      <!-- Perfectus Status Cover — book asset -->
+      <article class="art-card">
+        <span class="badge core">Core</span>
+        <img src="Perfectus%20Status%20Cover.jpg" alt="Mükemmel Ada: Perfectus Status cover">
+        <h3>Mükemmel Ada — Cover</h3>
+        <p>Directional motif + island silhouette; clean cover treatment.</p>
+      </article>
+
+    </div>
+  </section>
 
   <!-- ABOUT -->
   <section id="about" class="section">
