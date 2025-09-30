@@ -198,3 +198,13 @@ body{
   margin: 0 auto;     /* centers image */
   border-radius: 8px;
 }
+.art-card img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.art-card img:hover {
+  transform: scale(1.05);
+}
