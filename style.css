@@ -118,3 +118,27 @@ body{
   .nav__links a{display:none}
   #themeToggle{display:inline-block}
 }
+.book {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  overflow: hidden;
+  margin: 2rem auto;
+  max-width: 350px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.book:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+.book img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.book h2 {
+  margin: 1rem 0 0.5rem;
+}
+.book p {
+  color: #555;
+}
