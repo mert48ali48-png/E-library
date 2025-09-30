@@ -1,48 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ali Mert Tekin – Digital Library</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ali Mert Tekin — Digital Library</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/favicon.png">
 </head>
 <body>
-<nav>
-  <ul>
-    <li><a href="#books">Books</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-<header>
-  <h1>Ali Mert Tekin</h1>
-  <p>Self-Development • Fiction • Philosophy</p>
-</header>
 
-<main>
-<main id="books">
-  <section class="book">
-    <img src="images/cover2.jpg" alt="Book 2 cover">
-    <h2>Mükemmel Ada: Perfectus Status</h2>
-    <p>A philosophical fiction exploring utopia and human ambition.</p>
-    <a class="button" href="https://mertali5.gumroad.com/l/yjfac?_gl=1*zkuy2v*_ga*NTM1MzA3MjAxLjE3NTkxODE3MTA.*_ga_6LJN6D94N6*czE3NTkxODE3MTAkbzEkZzEkdDE3NTkxODM1NjUkajM5JGwwJGgw" target="_blank">Buy / Download</a>
+  <!-- Top Nav -->
+  <nav class="nav">
+    <div class="nav__brand">Ali Mert Tekin</div>
+    <div class="nav__links">
+      <a href="#books">Books</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <button id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero__inner">
+      <h1>Digital Library</h1>
+      <p class="tagline">Self-Development • Fiction • Philosophy</p>
+      <a class="cta" href="#books">Browse Books</a>
+    </div>
+  </header>
+
+  <!-- Books -->
+  <main id="books" class="books">
+    <!-- Book Card 1 -->
+    <article class="book" data-reveal>
+      <img src="images/mukemmel-ada-cover.jpg" alt="Mükemmel Ada: Perfectus Status cover">
+      <div class="book__body">
+        <h2>Mükemmel Ada: Perfectus Status</h2>
+        <p>İdeal düzenin bedelini ve özgür iradenin sınırlarını sorgulayan felsefi bir roman.</p>
+        <a class="button" target="_blank" href="https://mertali5.gumroad.com/l/yjfac">Buy / Download</a>
+      </div>
+    </article>
+
+    <!-- Example placeholder for next books; duplicate and edit -->
+    <article class="book" data-reveal>
+      <img src="images/placeholder.jpg" alt="Book cover">
+      <div class="book__body">
+        <h2>Power Philosophy</h2>
+        <p>Coming soon...</p>
+        <a class="button" target="_blank" href="#">Coming soon</a>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- About -->
+  <section id="about" class="section">
+    <h2>About the Author</h2>
+    <p>
+      I’m Ali Mert Tekin, a Bilkent University law student and independent writer.
+      I create works that blend philosophy, fiction, and self-development to challenge how we see society and ourselves.
+    </p>
   </section>
 
-  <!-- Repeat for more books -->
-</main>
-<section id="about">
-  <h2>About the Author</h2>
-  <p>Ben; akademik ve yaratıcı alanlarda kendimi geliştirmeye çalışan, farklı disiplinlerden beslenmeyi seven bir öğrenciyim. Yazarlık, illüstrasyon, kişisel gelişim ve hukuk bilgimi bir araya getirerek insanlara fayda sağlayabilecek ve kendime de değer katabilecek projeler üretmeye gayret ediyorum.</p>
-</section>
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:mert48ali48@gmail.com">mert48ali48@gmail.com</a></p>
+    <p>Instagram: <a target="_blank" href="https://instagram.com/yourhandle">@yourhandle</a></p>
+  </section>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: <a href="mailto:mert48ali48@gmail.com">mert48ali48@gmail.com</a></p>
-</section>
-<footer>
-  © 2025 Ali Mert Tekin – All rights reserved.
-</footer>
-<button id="backToTop">↑ Top</button>
-<script src="script.js"></script>
+  <footer class="footer">
+    <p>© 2025 Ali Mert Tekin — All rights reserved.</p>
+    <button id="backToTop" aria-label="Back to top">↑</button>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
