@@ -166,8 +166,9 @@ body{
 /* --- ART GALLERY --- */
 .gallery{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  gap:1rem; margin-top:1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.2rem;
+  justify-items: center;
 }
 .art-card{
   background:#fff; border-radius:12px; overflow:hidden;
@@ -188,4 +189,12 @@ body{
 .button{
   display:inline-block; margin:0 1rem 1rem; text-decoration:none; color:#fff; font-weight:700;
   background:linear-gradient(135deg,#1868ff,#8a5cff); padding:.55rem .9rem; border-radius:10px;
+}
+.art-card img {
+  width: 100%;
+  max-width: 280px;   /* <- this caps the size */
+  height: auto;       /* maintain aspect ratio */
+  display: block;
+  margin: 0 auto;     /* centers image */
+  border-radius: 8px;
 }
